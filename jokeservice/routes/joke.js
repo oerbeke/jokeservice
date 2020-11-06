@@ -1,5 +1,5 @@
 //Joke.js
-const controller = require("../controllers/Controller");
+const controller = require("../controllers/controller");
 const express = require('express');
 const router = express.Router();
 
