@@ -1,1 +1,0 @@
-Gruppe: Aaron, Jacob, Nicklas
