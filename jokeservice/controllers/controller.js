@@ -1,7 +1,7 @@
 //Controller.js
 const mongoose = require("mongoose");
 const Joke = require('../models/Joke');
-const config = require('../../config');
+const config = require('../config');
 
 mongoose.connect(config.databaseURI, {useNewUrlParser: true,useUnifiedTopology: true});
 
