@@ -4,12 +4,6 @@
     "express": "^4.17.1",
     "mongoose": "^5.10.13",
     "should": "^13.2.3"
-  },
-
-  "proxy": {
-    "/api": {
-      "target": "https://jokeservicedipajn.herokuapp.com/routes/"
-    }
   }
 
 }
