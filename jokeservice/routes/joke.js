@@ -5,7 +5,7 @@ const config = require("../config");
 const router = express.Router();
 
 router
-    .get('/', async (request, response) => {
+    .get('/api/jokes/', async (request, response) => {
         try {
             let jokes = await controller.getJokes();
             response.json(jokes);
