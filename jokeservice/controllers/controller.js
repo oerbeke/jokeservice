@@ -13,9 +13,8 @@ exports.createJoke = function (setup, punchline) {
 };
 
 exports.getJoke = function (jokeId) {
-    return Joke.findById(jokeId).exec();
+    return Joke.findById("jokeId").exec();
 };
-
 
 exports.getJokes = function () {
     return Joke.find().populate('_id').exec();
