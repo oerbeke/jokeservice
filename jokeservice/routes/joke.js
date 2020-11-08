@@ -1,14 +1,13 @@
 //Joke.js
 const controller = require("../controllers/controller");
 const express = require('express');
-const config = require("../config");
 const router = express.Router();
 
 router
     .get('/', async (request, response) => {
         try {
             let jokes = await controller.getJokes();
-            response.json(jokes);
+            response.send(jokes);
         } catch (e) {
             sendStatus(e, response);
         }
@@ -17,7 +16,7 @@ router
             try {
                 let {setup, punchline} = request.body;
                 await controller.createJoke(setup, punchline);
-                response.json({message: 'Joke saved!'});
+                response.send({message: 'Joke saved!'});
             } catch (e) {
                 sendStatus(e, response);
             }
