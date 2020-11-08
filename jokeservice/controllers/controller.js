@@ -13,7 +13,7 @@ exports.createJoke = function (setup, punchline) {
 };
 
 exports.getJoke = function (jokeId) {
-    return Joke.findById("5fa5d56c868b5b1e08dd6d51").exec();
+    return Joke.findById("jokeId").exec();
 };
 
 exports.getJokes = function () {
