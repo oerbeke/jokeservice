@@ -8,7 +8,7 @@ router
     .get('/', async (request, response) => {
         try {
             let jokes = await controller.getJokes();
-            response.send(jokes);
+            response.json(jokes);
         } catch (e) {
             sendStatus(e, response);
         }
@@ -17,7 +17,7 @@ router
             try {
                 let {setup, punchline} = request.body;
                 await controller.createJoke(setup, punchline);
-                response.send({message: 'Joke saved!'});
+                response.json({message: 'Joke saved!'});
             } catch (e) {
                 sendStatus(e, response);
             }
