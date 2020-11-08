@@ -2,7 +2,6 @@
 const controller = require("../controllers/controller");
 const express = require('express');
 const config = require("../config");
-const router = express.Router();
 
 router
     .get('/', async (request, response) => {
