@@ -1,6 +1,7 @@
 //Joke.js
 const controller = require("../controllers/controller");
 const express = require('express');
+const config = require("../config");
 const router = express.Router();
 
 router
