@@ -19,7 +19,7 @@ let allowCrossDomain = function(req, res, next) {
 
 
 app.use(allowCrossDomain);
-app.use(express.static(__dirname + '/public'));
+app.use(express.static(__dirname + '/'));
 app.use(express.json());
 app.use('/joke', require('./routes/joke'));
 
