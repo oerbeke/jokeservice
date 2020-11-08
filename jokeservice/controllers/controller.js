@@ -17,7 +17,7 @@ exports.getJoke = function (jokeId) {
 };
 
 exports.getJokes = function () {
-    return Joke.find().populate('setup').exec();
+    return Joke.find().populate('_id').exec();
 };
 
 /*
