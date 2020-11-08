@@ -1,9 +1,14 @@
-//Joke.js
 const mongoose = require('mongoose');
 
-const joke = new mongoose.Schema({
-    setup: String,
-    punchline: String
-});
+const JokeSchema = new mongoose.Schema({
+    setup: {
+        type: String,
+        required: true
+    },
+    punchline:{
+        type: String,
+        required: true
+    }
+})
 
-module.exports = mongoose.model('Joke', joke);
+module.exports = Joke = mongoose.model('joke', JokeSchema);
