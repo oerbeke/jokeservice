@@ -6,14 +6,14 @@ const Joke = require("../models/Joke");
 const { create } = require("../models/Joke");
 
 
-exports.createJoke = async function (joke, punchline) {
+exports.createJoke = async function (setup, punchline) {
  
-  let checkJoke = await Joke.findOne({ navn: joke }).exec();
-  if (checkJoke !== null) {
+  let joke = await Joke.findOne({ navn: setup }).exec();
+  if (joke !== null) {
     return "navnet findes allerede";
   }
-  checkJoke = await Joke.create({
-    setup: joke,
+  joke = await Joke.create({
+    setup: setup,
     punchline: punchline
   });
 
@@ -40,3 +40,16 @@ exports.updateJoke = async function (setup, punchline, nysetup, nypunchline) {
       { returnNewDocument: true }).exec()
 }
 
+exports.checkAddedJoke = async function(setup, punchline) {
+  const joke = await Joke.findOne({ setup: setup, punchline: punchline }).exec();
+
+  if (joke == null) {
+    createJoke(setup, punchline);
+    return "Joken er ny";
+  } else if (joke.setup == setup && joke.punchline == punchline) {
+    return "Joken existerer allerede";
+  } else {
+    return;
+  }
+  
+}

@@ -5,10 +5,17 @@
 
 </head>
 
-<ul>
+<table style="display: grid; border-collapse: collapse;vertical-align: middle;">
     {{#each jokes}}
-    <li>
-        Setup: {{setup}} Punchline: {{punchline}}
-    </li>
+    <tr>
+        <th></th>
+        <th>Setup</th>
+        <th>Punchline</th>
+    </tr>
+    
+    <tr>
+        <td>{{setup}}</td>
+        <td>{{punchline}}</td>
+    </tr>
     {{/each}}
 </ul>

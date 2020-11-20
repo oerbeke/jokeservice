@@ -1,7 +1,28 @@
-const fetch = require('node-fetch');
-const Joke = require('../routes/api/jokes')
-
 // const jokeUrl = 'https://jokeservicedipajn.herokuapp.com/api/jokes';
+
+const setup = document.querySelector('#setup');
+const punchline = document.querySelector('#punchline');
+const btnAddJoke = document.querySelector('#addJoke');
+
+
+async function post(url, objekt) {
+    const respons = await fetch(url, {
+        method: "POST",
+        body: JSON.stringify(objekt),
+        headers: { 'Content-Type': 'application/json' }
+    });
+    if (respons.status !== 201) // Created
+        throw new Error(respons.status);
+    return await respons.json();
+}
+
+btnAddJoke.onclick = async () => {
+    try {
+        await post("/addJoke", { setup: setup.value, punchline: punchline.value });
+    } catch (e) {
+        fejl.innerHTML = "Error i joke input!";
+    }
+}
 
 
 
