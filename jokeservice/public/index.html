@@ -1,35 +1,34 @@
-<!DOCTYPE html> 
-<html> 
-  <head> 
-    <title> 
-      JavaScript | Sending JSON data to server. 
-    </title> 
-  </head> 
+<!-- hierarki.html -->
+<html>
+<head>
+  <title>Jokes</title>
+  <script src="index.js"></script>
+</head>
+<body>
 
-  <body style="text-align:center;" id="body"> 
-    <h1 style="color:green;"> 
-      Jokes 
-    </h1> 
+    <div>
+        <button Onclick=addJoke()>
+          <h3>Tilføj joke!</h3>
+        </button>
 
-    <p> 
-        <!-- Making a text input -->
-        <input type="text" id="setup" placeholder="Joke setup"> 
-        <input type="email" id="punchline" placeholder="Joke punchline"> 
+        <br>
 
-        <!-- Button to send data -->
-        <button onclick="sendJSON()">Send JSON</button> 
+        Setup:
 
-      <!-- For printing result from server -->
-      <p class="result" style="color:green"></p> 
+        <br>
 
-   </p> 
+        <input type="text" id="inSetup">
 
-   <div>
-    <a href="https://jokeservicedipajn.herokuapp.com/api/jokes">List of jokes on database</a>
+        <br>
+        Punchline:
+        <br>
 
-   </div>
-  <!-- Include the JavaScript file -->
-  <script src="index.js"></script> 
+        <input type="text" id="inPunch"">
 
-  </body> 
+    </div> 
+
+
+
+
+</body>
 </html>
