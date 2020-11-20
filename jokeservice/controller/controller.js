@@ -44,7 +44,7 @@ exports.checkAddedJoke = async function(setup, punchline) {
   const joke = await Joke.findOne({ setup: setup, punchline: punchline }).exec();
 
   if (joke == null) {
-    createJoke(setup, punchline);
+    this.createJoke(setup, punchline);
     return "Joken er ny";
   } else if (joke.setup == setup && joke.punchline == punchline) {
     return "Joken existerer allerede";

@@ -3,7 +3,7 @@
 const setup = document.querySelector('#setup');
 const punchline = document.querySelector('#punchline');
 const btnAddJoke = document.querySelector('#addJoke');
-
+const fejl = document.querySelector('#fejl');
 
 async function post(url, objekt) {
     const respons = await fetch(url, {
@@ -17,11 +17,22 @@ async function post(url, objekt) {
 }
 
 btnAddJoke.onclick = async () => {
-    try {
-        await post("/addJoke", { setup: setup.value, punchline: punchline.value });
-    } catch (e) {
-        fejl.innerHTML = "Error i joke input!";
+    fejl.innerHTML = "";
+    if(setup.value != "" || punchline.value != "") {
+        try {
+            await post("/addJoke", { setup: setup.value, punchline: punchline.value });
+            fejl.innerHTML = "Joke blev tilføjet";
+            setTimeout(() => {
+                location.reload();
+            }, 3000);
+          
+        } catch (e) {
+            fejl.innerHTML = "Error: Joken existerer allerede";
+        }
+    } else {
+        fejl.innerHTML = "Setup og punchline skal udfyldes!"
     }
+   
 }
 
 

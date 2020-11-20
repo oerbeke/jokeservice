@@ -1,0 +1,62 @@
+{{!-- jokes.hbs --}}
+<head>
+    <title>Jokes-Home</title>
+    <meta charset="UTF-8"/>
+    <script src="index.js" defer></script>
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+
+    <div class="container">
+        <div class="left-element">
+            <h3>Tilføj joke!</h3>
+           
+                Setup:
+            <br>
+
+            <input type="text" id="setup">
+
+            <br>
+            <br>
+                Punchline:
+            <br>
+
+            <input type="text" id="punchline"">
+
+            <br>
+            <br>
+             <button id="addJoke">Tilføj joke!</button>&emsp;
+            <br>
+            <span id="fejl"/></span>
+
+        </div>
+
+        <div class="right-element">
+            <h3>Liste over alle jokes:</h3>
+            <table style="display: grid; border-collapse: collapse;vertical-align: middle;">
+                <tr>
+                    <th>Setup</th>
+                    <th>Punchline</th>
+                </tr>
+                {{#each joke}}
+                <tr>
+                    <td>{{setup}}</td>
+                    <td>{{punchline}}</td>
+                </tr>
+                {{/each}}
+            </table>
+        </div>
+
+        <br>
+
+        <div class="right-element">
+           <h3> INFO:</h3>
+            <br>
+            Siden reloader automatisk 3 sekunder efter en ny joke blev tilføjet for at opdatere listen.
+            <br>
+            Hvis den nye joke stadig ikke er i listen, så reload siden manuelt.
+        </div>
+    </div>
+   
+</body>

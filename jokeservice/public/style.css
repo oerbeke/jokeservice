@@ -1,16 +1,15 @@
 table {
     display: grid;
-    border-collapse: collapse;
+	border-collapse: collapse;
 	vertical-align: middle;
 }
 
- 
 td {	
 	border: 2px solid black;	
 	width: 20px;
 	text-align: center;
 	padding: 4px;
-	min-width: 50px;
+	min-width: 200px;
 }
 
 th {	
@@ -19,7 +18,7 @@ th {
 	text-align: center;
 	padding: 4px;
 	font-weight: bold;
-	min-width: 50px;
+	min-width: 200px;
 }
 
 .grid {
@@ -27,4 +26,27 @@ th {
 	gap: 50px;
 	grid-template-columns: 1fr 2fr;
 	
+}
+
+.container {
+    position: fixed;
+    left: 30%;
+    padding: 30px;
+    margin: center;
+}
+
+.left-element {
+    display: inline-block;
+	float: left;
+	padding: 30px;
+}
+
+.right-element {
+    display: inline-block;
+	float: left;
+	padding: 30px;
+}
+
+h3 {
+	text-align: center;
 }

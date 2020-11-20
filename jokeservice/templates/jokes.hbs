@@ -1,21 +1,25 @@
 {{!-- jokes.hbs --}}
 <head>
-
+<title>Jokes-api-jokes</title>
+    <meta charset="UTF-8"/>
     <link rel="stylesheet" href="style.css">
-
 </head>
 
-<table style="display: grid; border-collapse: collapse;vertical-align: middle;">
-    {{#each jokes}}
-    <tr>
-        <th></th>
-        <th>Setup</th>
-        <th>Punchline</th>
-    </tr>
-    
-    <tr>
-        <td>{{setup}}</td>
-        <td>{{punchline}}</td>
-    </tr>
-    {{/each}}
-</ul>
+<body>
+    <div class="container">
+        <h3>Liste over alle jokes:</h3>
+        <table style="display: grid; border-collapse: collapse; vertical-align: middle;">
+            
+            <tr>
+                <th>Setup</th>
+                <th>Punchline</th>
+            </tr>
+            {{#each joke}}
+            <tr>
+                <td>{{setup}}</td>
+                <td>{{punchline}}</td>
+            </tr>
+            {{/each}}
+        </table>
+    </div>
+</body>

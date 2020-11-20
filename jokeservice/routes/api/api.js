@@ -15,13 +15,12 @@ router.post("/addJoke", async (request, response) => {
   }
 });
 
-router.get("/api", async (request, response) => {
+router.get("/jokes", async (request, response) => {
   let joke;
 
   async function queryJokes() {
     console.log("executing get");
     joke = await Joke.find().exec();
-    console.log("finished");
   }
 
   function start() {
@@ -29,21 +28,27 @@ router.get("/api", async (request, response) => {
   }
 
   await start();
-  console.log(joke);
   response.render("jokes.hbs", { joke });
 });
 
 router.get('/', async (req, res) => {
-  try{
 
-      const jokes = await Joke.find().populate('joke', ['joke', ['setup', 'punchline']]);
-      res.json(jokes);
-  } catch (err) {
-      console.error(err.message);
-      res.status(500).send('Server error');
-  }
+    let joke;
+
+    async function queryJokes() {
+      console.log("executing get");
+      joke = await Joke.find().exec();
+    }
+  
+    function start() {
+      return queryJokes();
+    }
+  
+    await start();
+    res.render("index.hbs", { joke });
+
 })
-
+/*
 router.get('/othersites', async (req, res) => {
   try{
       const respons = await fetch(jokesUrl);
@@ -65,5 +70,6 @@ router.get('/otherjokes/:site', async (req, res) => {
       res.status(500).send('Server error');
   }
 })
+*/
 
 module.exports = router;
