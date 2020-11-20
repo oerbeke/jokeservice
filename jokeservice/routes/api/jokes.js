@@ -53,6 +53,23 @@ try{
 
 });
 
+router.get("/api", async (request, response) => {
+    let joke;
+  
+    async function queryJokes() {
+      console.log("executing");
+      joke = await Joke.find().exec();
+    }
+  
+    function start() {
+      return queryJokes();
+    }
+  
+    await start();
+    response.render("jokes.hbs", { joke });
+  });
+
+
 // @route   GET api/jokes
 // @desc    Hent alle jokes
 // @acess   Public
