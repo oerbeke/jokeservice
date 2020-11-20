@@ -1,1 +1,1 @@
-web: node server.js
+web: node jokeservice/server.js
