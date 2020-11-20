@@ -1,0 +1,14 @@
+{{!-- jokes.hbs --}}
+<head>
+
+    <link rel="stylesheet" href="style.css">
+
+</head>
+
+<ul>
+    {{#each jokes}}
+    <li>
+        Setup: {{setup}} Punchline: {{punchline}}
+    </li>
+    {{/each}}
+</ul>

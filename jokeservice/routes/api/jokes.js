@@ -67,7 +67,7 @@ router.get("/api", async (request, response) => {
   
     await start();
     response.render("jokes.hbs", { joke });
-  });
+});
 
 
 // @route   GET api/jokes

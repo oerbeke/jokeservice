@@ -1,21 +1,22 @@
 const express = require('express');
-const connectDB = require('./config/db');
+const mongoose = require("mongoose");
 
 const app = express();
+const hbs = require("hbs");
+const config = require('./config');
+const routes = require("./routes/api/api");
+module.exports.app = app;
+const controller = require("./controller/controller");
 
+app.set("view engine", "hbs");
+app.set("views", __dirname + "/templates");
 
-//connect DB
-connectDB();
+app.use(express.static(__dirname + "/public"));
+app.use(express.json());
 
-//Init Middelware
-app.use(express.json({ extended: false }));
+const port = process.env.PORT || config.localPort;
 
-app.get('/', (req, res) => res.send('API Running'));
+app.use("/", routes);
+app.listen(port);
 
-
-//Define routes 
-app.use('/api/jokes', require('./routes/api/jokes'));
-
-const PORT = process.env.PORT || 5000;
-
-app.listen(PORT, () => console.log(`Server started on port ${PORT}`));
+console.log("Lytter på port 8000 ...");

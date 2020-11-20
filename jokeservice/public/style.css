@@ -1,0 +1,30 @@
+table {
+    display: grid;
+    border-collapse: collapse;
+	vertical-align: middle;
+}
+
+ 
+td {	
+	border: 2px solid black;	
+	width: 20px;
+	text-align: center;
+	padding: 4px;
+	min-width: 50px;
+}
+
+th {	
+	border: 2px solid black;	
+	width: 20px;
+	text-align: center;
+	padding: 4px;
+	font-weight: bold;
+	min-width: 50px;
+}
+
+.grid {
+	display: grid;
+	gap: 50px;
+	grid-template-columns: 1fr 2fr;
+	
+}

@@ -11,4 +11,7 @@ const JokeSchema = new mongoose.Schema({
     }
 })
 
-module.exports = Joke = mongoose.model('joke', JokeSchema);
+//module.exports = Joke = mongoose.model('joke', JokeSchema);
+const joke = mongoose.model("jokes", JokeSchema);
+
+module.exports = joke;
