@@ -35,8 +35,6 @@ btnAddJoke.onclick = async () => {
    
 }
 
-
-
 async function get(url) {
     respons = await fetch(url);
     if (respons.status !== 200) // OK
@@ -55,7 +53,6 @@ function genererTabel(jokes) {
     html += '</table>';
     return html;
 }
-
 
 function sendJSON(){ 
 

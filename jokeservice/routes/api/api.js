@@ -48,11 +48,12 @@ router.get('/', async (req, res) => {
     res.render("index.hbs", { joke });
 
 })
-/*
+
+
+/* Ikke nået at implementere
 router.get('/othersites', async (req, res) => {
   try{
       const respons = await fetch(jokesUrl);
-
       res.json(respons);
   } catch (err) {
       console.error(err.message);
